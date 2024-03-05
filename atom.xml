@@ -3,11 +3,11 @@
   <title>BrBlog</title>
   
   
-  <link href="http://example.com/atom.xml" rel="self"/>
+  <link href="https://ranbi666.github.io/Blog.github.io/atom.xml" rel="self"/>
   
-  <link href="http://example.com/"/>
+  <link href="https://ranbi666.github.io/Blog.github.io/"/>
   <updated>2024-03-05T06:23:15.099Z</updated>
-  <id>http://example.com/</id>
+  <id>https://ranbi666.github.io/Blog.github.io/</id>
   
   <author>
     <name>Ran Bi</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://example.com/2024/03/05/hello-world/"/>
-    <id>http://example.com/2024/03/05/hello-world/</id>
+    <link href="https://ranbi666.github.io/Blog.github.io/2024/03/05/hello-world/"/>
+    <id>https://ranbi666.github.io/Blog.github.io/2024/03/05/hello-world/</id>
     <published>2024-03-05T03:21:52.859Z</published>
     <updated>2024-03-05T06:23:15.099Z</updated>
     
@@ -34,10 +34,10 @@
     
     
     
-    <category term="HEXO" scheme="http://example.com/categories/HEXO/"/>
+    <category term="HEXO" scheme="https://ranbi666.github.io/Blog.github.io/categories/HEXO/"/>
     
     
-    <category term="HelloWorld" scheme="http://example.com/tags/HelloWorld/"/>
+    <category term="HelloWorld" scheme="https://ranbi666.github.io/Blog.github.io/tags/HelloWorld/"/>
     
   </entry>
   
