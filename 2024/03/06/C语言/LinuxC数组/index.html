@@ -11,7 +11,7 @@
         name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1"
       />
-      <title>数据结构与算法简介 |  BrBlog</title>
+      <title>数组 |  BrBlog</title>
   <meta name="generator" content="hexo-theme-ayer">
       
       <link rel="shortcut icon" href="/favicon.ico" />
@@ -54,7 +54,7 @@
     <main class="content on">
       <section class="outer">
   <article
-  id="post-数据结构与算法/Step01-数据结构概念/step01"
+  id="post-C语言/LinuxC数组"
   class="article article-type-post"
   itemscope
   itemprop="blogPost"
@@ -65,7 +65,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  数据结构与算法简介
+  数组
 </h1>
  
 
@@ -73,11 +73,11 @@
     </header>
      
     <div class="article-meta">
-      <a href="/2024/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/Step01-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E5%BF%B5/step01/" class="article-date">
-  <time datetime="2024-03-05T08:15:32.175Z" itemprop="datePublished">2024-03-05</time>
+      <a href="/2024/03/06/C%E8%AF%AD%E8%A8%80/LinuxC%E6%95%B0%E7%BB%84/" class="article-date">
+  <time datetime="2024-03-06T03:04:09.619Z" itemprop="datePublished">2024-03-06</time>
 </a> 
   <div class="article-category">
-    <a class="article-category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+    <a class="article-category-link" href="/categories/Linux-C/">Linux C</a>
   </div>
   
 <div class="word_count">
@@ -85,7 +85,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> 字数统计:</span>
-            <span class="post-count">916</span>
+            <span class="post-count">1.1k</span>
         </span>
     </span>
 
@@ -94,7 +94,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> 阅读时长≈</span>
-            <span class="post-count">3 分钟</span>
+            <span class="post-count">4 分钟</span>
         </span>
     </span>
 </div>
@@ -109,27 +109,47 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <h1 id="数据结构与算法"><a href="#数据结构与算法" class="headerlink" title="数据结构与算法"></a>数据结构与算法</h1><p>数据结构与算法是计算机科学中重要的概念，它们相辅相成，数据结构是指数据的组织和存储方式，它决定了数据的逻辑结构和物理结构</p>
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><p>指解决问题的步骤和方法，决定了程序的执行效率和正确性。设计算法时需要考虑数据结构的选择和使用，以便更好地利用数据结构的优势来提高算法的效率。</p>
-<p>在设计程序时需要根据具体问题选择合适的数据结构和算法。例如：在处理排序时可以使用冒泡排序，插入排序，选择排序，快速排序等，同时还需要使用合适的数据结构来存储待排序的数据。不同的数据结构和算法适用于不同的场景。</p>
-<p><strong>简单来说，数据结构就像是一个容器，对容器内的元素进行增删改查的过程称之为算法。</strong></p>
-<h2 id="数据"><a href="#数据" class="headerlink" title="数据"></a>数据</h2><p>数据是描述客观事务的符号。是计算机中可以操作的对象。数据不仅仅包括整数，小数，符号，还包括视频，音频等非数值类型，它满足两个特点：可以输入到计算机中，能被计算机程序处理，对于数值类型可以进行数值计算，对于非数值类型则可以通过编码的手段变成字符类型来处理。</p>
-<h2 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h2><p>结构简单的来说就是关系，比如分子结构，就是说组成分子的原子之间的排列方式，而数据结构就是不同数据相互之间，存在一种或多种特定关系的元素的集合。在计算机中，数据元素并不是孤立的杂乱无序的，而是具有内在联系的数据集合。数据元素之间存在一种或多种特定的关系也就是数据的组织形式，它可以分为逻辑结构和物理结构</p>
-<h2 id="逻辑结构"><a href="#逻辑结构" class="headerlink" title="逻辑结构"></a><strong>逻辑结构</strong></h2><p>逻辑结构是指数据元素之间的逻辑关系，即数据在用户面前呈现的方式，而与数据在计算机内部的存储关系无关。它包括以下四种基本类型，</p>
+  <h1 id="数组的基本操作"><a href="#数组的基本操作" class="headerlink" title="数组的基本操作"></a>数组的基本操作</h1><p>数组（Array）是一种复合类型，它由一系列相同类型的元素组成，例如定义一个由4个整数组成的数组count:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> count[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+
+<p>数组count的4个元素的存储空间也是相邻的。数组中的元素可以是基本类型，也可以是复合数据类型，根据组合规则，我们可以定义一个由4个结构体元素组成的数组：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Complex</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="type">double</span> x,y;</span><br><span class="line">&#125;a[<span class="number">4</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//或</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> </span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="type">double</span> x,y;</span><br><span class="line">&#125;Complex;</span><br><span class="line">Complex a[<span class="number">4</span>];</span><br></pre></td></tr></table></figure>
+
+<p>也可以定义一个包含数组成员的结构体：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="type">double</span> x,y;</span><br><span class="line">	<span class="type">int</span> count[<span class="number">4</span>];</span><br><span class="line">&#125;sT;</span><br><span class="line"><span class="comment">//或者</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="type">double</span> x,y;</span><br><span class="line">	<span class="type">int</span> count[<span class="number">4</span>];</span><br><span class="line">&#125;sT;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">sT</span> <span class="title">st_var</span>；</span></span><br><span class="line"><span class="class"><span class="title">sT</span> <span class="title">st_var</span>;</span></span><br><span class="line"><span class="comment">//上述两种声明结构体的方式其实都是合法的，并且在定义结构体时具有相同的功能。不过使用 typedef 可以让代码更加简洁清晰，因为它允许你直接使用 sT 来定义结构体变量，而不必每次都写 struct。因此，使用 typedef 是更常见和更推荐的做法。</span></span><br></pre></td></tr></table></figure>
+
+<p>数组的长度应该用一个常量表达式来指定，而且这个常量表达式的值必须是整数类型。数组中的元素通过下标（或者叫索引，Index）来访问。例如前面定义的由4个整数组成的数组count图示如下：</p>
+<p><img src="https://fqcdnoteimg.oss-cn-beijing.aliyuncs.com/noteImgCopy/count%E6%95%B0%E7%BB%84%E6%8F%8F%E8%BF%B0%E5%9B%BE.png" alt="count数组描述图"></p>
+<p>整个数组占用了四个整数的存储单元，存储单元用小方框表示，里面的数字是存储在这个单元中的整数(假设都是0)，而框外面的数字是下标，这四个单元分别表示为：</p>
 <ul>
-<li>集合结构：数据元素之间没有固定的顺序，只是属于同一个集合。<img src="https://fqcdnoteimg.oss-cn-beijing.aliyuncs.com/noteImgCopy/%E9%9B%86%E5%90%88%E7%BB%93%E6%9E%84%E6%8F%8F%E8%BF%B0%E5%9B%BE.png" alt="image-20240201171444098" style="zoom:50%;" /></li>
-<li>线性结构：数据元素之间存在一对一的线性关系。<img src="https://fqcdnoteimg.oss-cn-beijing.aliyuncs.com/noteImgCopy/%E7%BA%BF%E6%80%A7%E7%BB%93%E6%9E%84%E6%8F%8F%E8%BF%B0%E5%9B%BE.png" alt="image-20240201171626064" style="zoom: 80%;" /></li>
-<li>树状结构：数据元素之间存在一对多的层次关系<br><img src="https://fqcdnoteimg.oss-cn-beijing.aliyuncs.com/noteImgCopy/%E6%A0%91%E7%8A%B6%E7%BB%93%E6%9E%84%E6%8F%8F%E8%BF%B0%E5%9B%BE.png" alt="image-20240201173835359"></li>
-<li>图形结构：数据元素之间存在多对多的任意关系<br><img src="https://fqcdnoteimg.oss-cn-beijing.aliyuncs.com/noteImgCopy/%E5%9B%BE%E5%BD%A2%E7%BB%93%E6%9E%84%E6%8F%8F%E8%BF%B0%E5%9B%BE.png" alt="image-20240201173949362"></li>
+<li>count[0]</li>
+<li>count[1]</li>
+<li>count[2]</li>
+<li>count[3]</li>
 </ul>
-<h2 id="物理结构（存储结构）"><a href="#物理结构（存储结构）" class="headerlink" title="物理结构（存储结构）"></a>物理结构（存储结构）</h2><p>物理结构指的是数据在计算机中的存储形式，在计算机内存或外存中的实际存储方式，它关注数据的具体存储表示和存储位置。不同的逻辑结构可以对应相同或不同的物理结构，同一逻辑结构可以有多种不同的物理存储方式。物理结构与计算机内存、磁盘等硬件设备的特性有关，对程序员来说，逻辑结构更为重要，因为它定义了数据的组织和操作方式。物理结构总共有两种。</p>
-<ol>
-<li><p>顺序存储：数据元素按照一定的顺序存储在连续的内存空间中，c&#x2F;c++数组就是此结构。</p>
-<img src="https://fqcdnoteimg.oss-cn-beijing.aliyuncs.com/noteImgCopy/%E9%A1%BA%E5%BA%8F%E5%AD%98%E5%82%A8%E6%8F%8F%E8%BF%B0%E5%9B%BE.png" alt="image-20240201174435420" style="zoom:67%;" />
-</li>
-<li><p>链式存储：元素存储在任意的内存中，通过链接的方式将两个元素联系到一起，链表就是一种基础的链式结构。</p>
-<img src="https://fqcdnoteimg.oss-cn-beijing.aliyuncs.com/noteImgCopy/%E9%93%BE%E5%BC%8F%E5%AD%98%E5%82%A8%E6%8F%8F%E8%BF%B0%E5%9B%BE.png" alt="image-20240201174516897" style="zoom:67%;" /></li>
-</ol>
+<p>注意，在定义数组<code>int count[4]</code>，时，方括号中的数字4表示数组的长度，而在访问数组时，方括号中的数字表示访问数组的第几个元素。和我们平常数数不同，数组元素是从<code>&quot;第0个&quot;</code> 开始数的，大多数编程语言都是这么规定的，所以计算机术语中有Zeroth <code>第零位，在编程中,“zeroth”指的是数组或列表中的第一个元素</code>,这样的规定使得访问数组元素非常方便，比如count数组中的每个元素占用4个字节，则count[i]位于从数组开头跳过4*i个字节的存储位置（只是对于内存来讲），这种数组下标的表达式不仅可以表示存储位置中的值，也可以表示存储位置本身，也就是说可以 做左值，因此以下语句都是正确的：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">count[<span class="number">0</span>] = <span class="number">7</span>;<span class="comment">//将第一个元素的值修改为7</span></span><br><span class="line">count[i] = count[<span class="number">0</span>] *<span class="number">2</span>;<span class="comment">//将第i个元素的值修改为第一个元素*2</span></span><br><span class="line">++count[<span class="number">2</span>];<span class="comment">//先取出第三个元素的值，再进行++</span></span><br><span class="line">*(count+<span class="number">1</span>);<span class="comment">//第二个元素的值</span></span><br><span class="line">count+<span class="number">3</span>;<span class="comment">//第四个元素的地址</span></span><br><span class="line">&amp;(count[<span class="number">3</span>]);<span class="comment">//第四个元素的地址</span></span><br></pre></td></tr></table></figure>
+
+<p>数组的下标也可以是表达式，但表达式的值必须是整型或字符型的。例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> i = <span class="number">10</span>;</span><br><span class="line">count[i] = count[i+<span class="number">1</span>];</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> c_num = <span class="number">1</span>;</span><br><span class="line">count[c_num] = count[c_num+<span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+
+<p>注意：使用数组下标不能超出数组的长度范围，这一点在使用变量作下标时尤其要注意。C编译器并不检查<code>count[-1]</code>或者<code>count[100]</code>这样的访问越界错误，编译时能顺利通过，属于运行时错误。但是这种错误很隐蔽，发生访问越界时程序可能并不会立即崩溃，而执行到后面某个正确的语句时却可能突然崩溃。所以最初写代码时要小心，因为事后依靠调试来解决问题的成本是很高的。</p>
+<p>数组也可以这样初始化，未赋值的元素也是用0来初始化，例如：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> count[<span class="number">4</span>] = &#123;<span class="number">3</span>, <span class="number">2</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>则count[0]等于3，count[1]等于2，后面两个元素等于0。如果定义数组的同时初始化它，也可以不指定数组的长度。例如</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> count[] = &#123;<span class="number">3</span>, <span class="number">2</span>, <span class="number">1</span>,&#125;;,</span><br></pre></td></tr></table></figure>
+
+<p>编译器会根据初始化来确定数组长度为3。</p>
+<h2 id="定义和访问数组案例"><a href="#定义和访问数组案例" class="headerlink" title="定义和访问数组案例"></a>定义和访问数组案例</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> count[<span class="number">4</span>] = &#123;<span class="number">3</span>, <span class="number">2</span>,&#125;,i;</span><br><span class="line">    <span class="keyword">for</span>(i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;count[%d] = %d\n&quot;</span>, i, count[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">运行结果</span></span><br><span class="line"><span class="comment">count[0] = 3</span></span><br><span class="line"><span class="comment">count[1] = 2</span></span><br><span class="line"><span class="comment">count[2] = 0</span></span><br><span class="line"><span class="comment">count[3] = 0</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<p>[^0]: </p>
  
       <!-- reward -->
       
@@ -194,12 +214,12 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/2024/03/05/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/Step01-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E6%A6%82%E5%BF%B5/step01/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://example.com/2024/03/06/C%E8%AF%AD%E8%A8%80/LinuxC%E6%95%B0%E7%BB%84/" alt="微信分享二维码">
     </div>
 </div>
 
 <div id="share-mask"></div>  
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li></ul>
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux-C/" rel="tag">Linux C</a></li></ul>
 
     </footer>
   </div>
@@ -207,19 +227,10 @@
    
   <nav class="article-nav">
     
+    
       <a href="/2024/03/06/C%E8%AF%AD%E8%A8%80/LinuxC%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Linux C 第一个应用程序
-          
-        </div>
-      </a>
-    
-    
-      <a href="/2024/03/05/hello-world/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">Hello World</div>
+        <div class="article-nav-title">Linux C 第一个应用程序</div>
       </a>
     
   </nav>
